@@ -1,0 +1,15 @@
+/*
+ <font> elements
+ https://stackoverflow.com/questions/819079/how-to-convert-font-size-10-to-px 
+ 
+*/
+
+h1,h2,h3,h4,h5,h6 { color:#002369; }
+.spacetext { color:#002369; }
+.fontsize1 { font-size:0.63em; }
+.fontsize2 { font-size:1.0em; }
+.fontsize3 { font-size:1.1em; }
+.fontsize4 { font-size:1.13em; }
+.fontsize5 { font-size:1.5em; }
+.fontsize6 { font-size:2em; }
+.fontsize7 { font-size:3em; }

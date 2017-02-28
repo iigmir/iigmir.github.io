@@ -1,0 +1,176 @@
+@keyframes link_hover_animate { from { color: #AA5F00; } to { color: #FFE607; } }
+@keyframes link_blur_animate  { from { color: #FFE607; } to { color: #AA5F00; } }
+
+body
+{
+    margin:0;
+    background-color:#22255A;
+}
+h1
+{
+    margin:1vh;
+    font-size:2rem;
+    text-align:center;
+    font-family: 'Fredericka the Great', cursive;
+}
+h2
+{
+    padding:1rem 0 1rem 0;
+    font-family: 'Crete Round', serif;
+}
+
+a
+{
+    color: #AA5F00;
+    /*
+    animation-name: link_blur_animate;
+    animation-duration: 0.1s;
+    animation-direction: alternate;
+    */
+}
+a:hover
+{
+    color: #FFE607;
+    /*
+    animation-name: link_hover_animate;
+    animation-duration: 0.1s;
+    animation-direction: alternate;
+    */
+}
+h1 a,h1 a:hover
+{
+    color:#FFE607;
+    text-decoration:none;
+}
+
+p
+{
+    margin:0;
+    padding:0.5rem 0 0.5rem 0;
+}
+
+nav ul
+{
+    text-align:center;
+    padding:0;
+}
+nav li
+{
+    display:inline-block;
+    margin-right:1rem;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+main
+{
+    margin:0 auto;
+    color:#FFDDB1;
+    max-width:90%;
+    /* javascript effect */
+    height:60vh;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+
+section > *
+{
+    margin: 0 auto;
+    text-align:center;
+}
+table
+{
+    border-collapse: collapse;
+    border: none;height: 100%;
+}
+table *
+{
+    text-align:left;
+}
+table caption
+{
+    margin:1rem 0 1rem 0;
+    font-family: 'Crete Round', serif;
+}
+table td
+{
+    border: 1px solid #FFDDB1;
+    border-bottom: none;
+    border-right: none;
+    height:100%;
+}
+table td:last-child{padding:1rem;}
+table td:first-child a
+{
+    /*
+    display:table;
+    height:100%;
+    width: 100%;
+    text-align:center;
+    */
+    display:block;
+    padding:1rem;
+    
+}
+table td:first-child:hover{background-color:#AA5F00;}
+table td:first-child:hover a{color:#FFE607;}
+table tr:first-child td {border-top: none;}
+table tr td:first-child {border-left: none;}
+
+footer
+{
+    height:5vh;
+    padding-top:1vh;
+    text-align:center;
+    color:#FFDDB1;
+}
+footer p .fa {display:inline;}
+footer ul{padding:0;}
+footer li
+{
+    display:inline-block;
+    margin:0.1rem;
+    margin-right:1rem;
+}
+footer a
+{
+    text-decoration:none;
+    font-family: 'Fredericka the Great', cursive;
+}
+.fa
+{
+    display:block;
+}
+.selected_link
+{
+    color: #FFE607;
+}
+
+/* decoration arrow */
+.decoration *
+{
+    position:absolute;
+    color: #AA5F00;
+    font-size:5rem;
+    top: 100px;
+}
+.decoration *:hover
+{
+    cursor:pointer;
+    color: #FFE607;
+}
+.decoration .left{left:20px;}
+.decoration .right{right:50px;}
+
+.overscroll{overflow-y:scroll;}
+
+/*RWD service*/
+@media screen and (max-width: 800px)
+{
+    main
+    {
+        max-width:100%;
+        padding:1rem;
+    }
+}
+@media screen and (min-height: 601px) and (max-height: 700px) { main { height:50vh; } }
+@media screen and (max-height: 600px) { main { height:40vh; } }

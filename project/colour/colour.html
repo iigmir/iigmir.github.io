@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> My favour colour schemes </title>
+    <meta charset="UTF-8" />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href=" https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css " />
+    <link href="https://fonts.googleapis.com/css?family=Secular+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <style>
+    * { font-family: 'Secular One', sans-serif; }
+    
+    body > div
+    {
+        /* Size */
+        width:750px;height:400px;
+        /* Position */
+        position:absolute;
+        left:100px;top:100px;
+        padding:30px;
+        /* Style */
+        border-style: solid;
+        border-width: 20px;
+        border-radius:30px;
+    }
+        
+    a { text-decoration: none; }
+    </style>
+    
+    <!-- JS -->
+    <script src=" https://code.jquery.com/jquery-2.2.4.min.js "></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+    $(document).ready(function()
+    {   // Don't write this cause it won't work: $( "body > div" ).css({ "background-color": "#CC0000", "border-color","#FFFFFF" });
+        var h2text; var ptext;
+        $( "#default" ).click(function()
+        {
+            h2text = "Default";
+            ptext = 'This is text without any colour palette.';
+            $( "body" ).animate({ backgroundColor: "#FFFFFF" });
+            $( "body > div" ).animate({ backgroundColor: "#FFFFFF" });
+            $( 'body > div' ).animate({borderColor: '#000000'});
+            $( 'h2,p,li' ).animate({color: '#000000'});
+            
+            $( "h2" ).text( h2text );$( "p" ).html( ptext );
+        });
+        
+        $( "#britain" ).click(function()
+        {
+            h2text = "Britain";
+            ptext = 'This colour palette is inspired by <a href= "https://en.wikipedia.org/wiki/Union_Jack">Union Jack</a>, the national flag of the United Kingdom.';
+            $( "body" ).animate({ backgroundColor: "#003399" });
+            $( "body > div" ).animate({ backgroundColor: "#CC0000" });
+            $( 'body > div' ).animate({borderColor: '#FFFFFF'});
+            $( 'h2,p,li' ).animate({color: '#FFFFFF'});
+            
+            $( "h2" ).text( h2text );$( "p" ).html( ptext );
+        });
+        
+        $( "#ema" ).click(function()
+        {
+            h2text = "Ema";
+            ptext = 'This colour palette is inspired by <a href= "http://shirobako-anime.com/images/character/2main.png">Ema Yasuhara</a>, who is my favourite anime character.';
+            $( "body" ).animate({ backgroundColor: "#d6ccca" });
+            $( "body > div" ).animate({ backgroundColor: "#7F93AD" });
+            $( 'body > div' ).animate({borderColor: '#FFFFFF'});
+            $( 'h2,p,li' ).animate({color: '#40e0d0'});
+            
+            $( "h2" ).text( h2text );$( "p" ).html( ptext );
+        });
+        
+    });
+    </script>
+</head>
+<body>
+    <div>
+        <ul> <!-- Selection -->
+            <li id="default"> Default </li>
+            <li id="britain"> Britain </li>
+            <li id="ema"> Ema </li>
+        </ul>
+        <hr /> <!-- Description -->
+        <h2> Default </h2>
+        <p> This is text without any colour palette. </p>
+    </div>
+</body>
+</html>

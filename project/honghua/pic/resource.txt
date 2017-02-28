@@ -1,0 +1,16 @@
+alcohol: http://www.euractiv.com/sites/default/files/gallery/alcohol2.jpg
+
+family: http://www.concernedaustralians.com.au/images/Aboriginal_Elders_meet_Navi_Pillay.jpg
+
+fish: https://eatfg.files.wordpress.com/2012/10/photo14.jpg
+
+foodanddrink: https://upload.wikimedia.org/wikipedia/commons/e/e5/Sodas.JPG
+
+kimenisland: Google Maps
+
+oceanside: http://visitoceanside.org/wp-content/uploads/2012/11/Oceanside-pier.jpeg
+
+ready: http://www.worldpropertyjournal.com/news-assets/Airport-terminal.jpg
+
+xiamenisland: http://commondatastorage.googleapis.com/static.panoramio.com/photos/original/57672545.jpg
+

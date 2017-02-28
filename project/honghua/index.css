@@ -1,0 +1,39 @@
+.jumbotron {background-color:#145689;margin-bottom: 1px;}
+
+div {height: 100vh;background-attachment: fixed;}
+/*
+    https://stackoverflow.com/questions/18096378/full-screen-div-that-fits-browser-size
+    https://ihatetomatoes.net/demos/simple-parallax-scrolling-tutorial/
+*/
+
+div * { text-align:center;color:#FFFFFF; }
+div p{ max-width: 600px;margin: 0 auto; }
+
+div p{ opacity:0; }
+div p:hover
+{opacity:1;
+-webkit-transition: opacity .25s ease-in-out .0s;
+transition: opacity .25s ease-in-out .0s;
+}
+/*opacity:0;*/
+.jumbotron {background-size:cover;}
+
+#oceanside { background-image: url(pic/oceanside.jpeg); }
+
+#kimenisland { background-image: url("pic/kimenisland.png"); }
+
+#xiamenisland { background-image: url("pic/xiamenisland.jpg"); }
+
+#foodanddrink { background-image: url("pic/foodanddrink.jpg"); }
+
+#alcohol { background-image: url("pic/alcohol.jpg"); }
+
+#fish { background-image: url("pic/fish.jpg"); }
+
+#tiehanfort { background-image: url("pic/tiehanfort.jpg"); }
+
+#family { background-image: url("pic/family.jpg"); }
+
+#ready { background-image: url("pic/ready.jpg"); }
+
+#credit a:hover { color:#FFFFFF; }

@@ -1,0 +1,16 @@
+table { width:100%; }
+thead, tfoot { text-align:center; }
+tbody td { height:30px; }
+
+#piano{height:400px;border: 1px solid #FF0000;}
+#index-news *{font-size:14px;}
+
+#hot-goods img { float:left; }
+#hot-goods > * { display:inline-block; }
+#hot-goods div
+{
+    width:75%; height:149px;
+    padding:5px;
+    border: 5px solid #48B0E7;
+    border-radius:0px 5px 5px 0px;
+}

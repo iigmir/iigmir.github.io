@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title> A Test In Company </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <style>
+    .starter-template { padding-top: 40px; }
+    .given-map { height:256px }
+    .given-map iframe { border:0;width:100%;height:100%; }
+    @media (max-width: 767px){ button{ display:none; } }
+    </style>
+    <!-- Last update:2017/01/26 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../back2home.css" />
+</head>
+<body>
+    <div id="back2home" style="background-color:red;"><a href="../home.php" title="Back to homepage/回首頁" style="padding:40% 25% 40% 25%;"> 回首頁 </a></div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">面試問題實作</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#preface">前言</a></li>
+            <li><a href="#works">實作</a></li>
+          </ul>
+        </div> <!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="starter-template" id="preface">
+        <h1>前言</h1>
+        <p>我曾經在 2015 年接受某家公司的上機面試。可惜那次沒有解出來，所以沒被錄取。<br />不過，我對問題感到很有興趣，所以貼來這裡實做看看。<br />以下是題目：</p>
+        <ul>
+            <li>HTML &amp; CSS</li>
+                <ol>
+                    <li>把地圖區塊的高度與聯絡資訊的高度對齊。</li>
+                    <li>聯絡我們的版面配置全部置中，姓名電話 E-mail 在同一行、訊息在下一行。</li>
+                </ol>
+            <li>Javascript</li>
+                <ol>
+                    <li>點選送出後，判斷表單所有欄位是否為空，並顯示提示框。</li>
+                </ol>
+        </ul>
+        <p>好。我們開始吧。</p>
+      </div>
+    </div><!-- /.container -->
+    
+    <div class="container" id="works">
+        <h1>實作</h1>
+        <!-- 地圖部份 --> <br />
+        <div class="row">
+            <div class="col-md-6 given-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.3035507672225!2d139.74390099339416!3d35.66952698822504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b8e390c678f%3A0x57b009e217c4fdab!2z5pel5pys44Gf44Gw44GT55Sj5qWt77yI5qCq77yJIOacrOekvg!5e0!3m2!1szh-TW!2stw!4v1456321584217" allowfullscreen></iframe>
+                <!-- frameborder="0" style="border:0" width="500" height="245" -->
+            </div>
+            <div class="col-md-6">
+                <h3>Contract Us</h3>
+                <p>〒105-8422 2-1, Toranomon, Minato, Tokyo, Japan </p>
+                <ul>
+                    <li>TYO: 2914</li>
+                    <li>June 1, 1949</li>
+                    <li>Japan Tobacco</li>
+                    <li>0120-198-504</li>
+                </ul>
+                <p>我一開始有想到直接手動修改 height，不過顧慮到不同螢幕的表現問題，所以想從比例下去改。結果花時間找資料，反而把面試時間耗光了。</p>
+                <p>2016/11/28 加筆：不斷學習以後發現高度寫死，修改難度不會太高。</p>
+            </div>
+        </div>
+        <div class="row"> <div class="col-md-12"> <h3>Send Us Message</h3> </div> </div>
+        <form>
+            <div class="row">
+                <div class="col-md-4"> First name: <br /> <input type="text" id="form_firstname" required> </div>
+                <div class="col-md-4"> Last name: <br /> <input type="text" id="form_lastname" required> </div>
+                <div class="col-md-4"> Email Address: <br /> <input type="text" id="form_email" required> </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    Message: <br />
+                    <textarea rows="4" cols="150" id="form_message" required>
+HTML 沒什麼困難的。就把 div 切成三份而已。至於 JS，有點難，不過總算出來了：用 jQuery，把各欄位的數值變成陣列，最後檢查陣列數值是否為 0：沒寫的意思。
+
+2016/08/31 加筆：其實「表單欄位」有更簡單的辦法，那就是使用針對元素使用 required 屬性。不過，這屬性是從 HTML5 才開始支援。
+                    </textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-primary" id="form_submit"> Submit! </button>
+                </div>
+            </div>
+        </form> 
+    </div><!-- /.container -->
+
+<script>
+
+$( document ).ready(function()
+{
+    $( "#form_submit" ).click(function()
+    {
+        var checkarray = [$("#form_firstname").val().length,$("#form_lastname").val().length,$("#form_email").val().length,$("#form_message").val().length];
+        var successornot = false;
+        for (var cai = 0; cai < checkarray.length; cai++)
+        {
+            if ( checkarray[cai] === 0)
+            {
+                successornot = false;
+                alert( "有東西沒寫到！" );
+                break;
+            }
+            successornot = true;
+        }
+        if ( successornot == true ) { alert( "成功！" ); }
+    });
+});
+
+</script>
+    
+</body>
+</html>

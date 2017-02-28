@@ -1,0 +1,125 @@
+body {background-color:rgb(147,206,222);/*rgba(147,206,222,0.2))*/}
+
+nav
+{
+    background-color:red;
+    left:0px;top:0px;
+    height: 100%;
+    width:4%;
+    position: fixed;
+}
+
+nav li {list-style-type:none;}
+
+article {
+    padding-left:5%;
+    padding-top:10px;padding-bottom:10px;
+}
+
+#start
+{
+    background-image: linear-gradient( rgba(147,206,222,0.2),rgba(73,165,191,0.8) ),url(https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg) ;
+    background-repeat: no-repeat;
+    background-position: center top;
+/*
+http://boohover.pixnet.net/blog/post/20556952-%E5%8D%8A%E9%80%8F%E6%98%8E%E8%88%87%E9%80%8F%E6%98%8E%E6%95%88%E6%9E%9C%E8%A8%AD%E8%A8%88-css-rgba,-hsla-%E8%89%B2%E5%BD%A9%E5%96%AE%E4%BD%8D-%28
+*/
+}
+
+#start img
+{
+    width:150px;height:150px;
+    display: block;margin-left: auto;margin-right: auto; /* Let Image To Centre */
+}
+
+#start h1,#start p
+{
+    text-align:center;
+}
+
+#intro
+{
+    background: linear-gradient(rgba(73,165,191,0.8), rgba(147,206,222,0.2)),url(https://upload.wikimedia.org/wikipedia/commons/d/d1/EU-United_Kingdom.svg);
+    background-position: 0% 45%;
+    overflow:auto;
+}
+
+#intro_map
+{
+    display:inline-block;
+    float:left;
+    margin:5px;
+}
+
+#intro_text
+{   /*
+    I firstly use "float:right;" in <p>, but it will run into next article.
+    Then, I create two <div>s and both use "display:inline-block;", still fail.
+    "Wired"--I have no idea so use dev tool to try other method.
+    block "float:right;" and "display:inline-block;" in intro_text, works!
+    But why?
+    */
+}
+
+
+#anthem
+{
+    background-image:linear-gradient( rgba(140,200,220,0.2),rgba(73,165,191,0.8) ),url( https://upload.wikimedia.org/wikipedia/commons/7/75/Parliament_at_Sunset.JPG );
+    background-size:cover;
+    background-position: center 20%; 
+}
+
+/*background: linear-gradient(rgba(73,165,191,0.8), rgba(147,206,222,0.2));*/
+#country {background: linear-gradient(rgba(73,165,191,0.8), rgba(147,206,222,0.2));}
+
+.countries { width:22%;display:inline-block; }
+.countries p { text-align:center; }
+
+#eng
+{
+background: rgba(255,255,255,1);
+background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(240,47,23,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(240,47,23,1)));
+background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(240,47,23,1) 100%);
+background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(240,47,23,1) 100%);
+background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(240,47,23,1) 100%);
+background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(240,47,23,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f02f17', GradientType=1 );
+}
+
+#scot
+{
+background: rgba(0,101,189,1);
+background: -moz-linear-gradient(left, rgba(0,101,189,1) 0%, rgba(255,255,255,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,101,189,1)), color-stop(100%, rgba(255,255,255,1)));
+background: -webkit-linear-gradient(left, rgba(0,101,189,1) 0%, rgba(255,255,255,1) 100%);
+background: -o-linear-gradient(left, rgba(0,101,189,1) 0%, rgba(255,255,255,1) 100%);
+background: -ms-linear-gradient(left, rgba(0,101,189,1) 0%, rgba(255,255,255,1) 100%);
+background: linear-gradient(to right, rgba(0,101,189,1) 0%, rgba(255,255,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0065bd', endColorstr='#ffffff', GradientType=1 );
+}
+
+#wales
+{
+background: rgba(240,47,23,1);
+background: -moz-linear-gradient(left, rgba(240,47,23,1) 0%, rgba(255,255,255,1) 50%, rgba(22,155,98,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(240,47,23,1)), color-stop(50%, rgba(255,255,255,1)), color-stop(100%, rgba(22,155,98,1)));
+background: -webkit-linear-gradient(left, rgba(240,47,23,1) 0%, rgba(255,255,255,1) 50%, rgba(22,155,98,1) 100%);
+background: -o-linear-gradient(left, rgba(240,47,23,1) 0%, rgba(255,255,255,1) 50%, rgba(22,155,98,1) 100%);
+background: -ms-linear-gradient(left, rgba(240,47,23,1) 0%, rgba(255,255,255,1) 50%, rgba(22,155,98,1) 100%);
+background: linear-gradient(to right, rgba(240,47,23,1) 0%, rgba(255,255,255,1) 50%, rgba(22,155,98,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f02f17', endColorstr='#169b62', GradientType=1 );
+}
+
+#nire
+{
+background: rgba(22,155,98,1);
+background: -moz-linear-gradient(left, rgba(22,155,98,1) 0%, rgba(255,255,255,1) 50%, rgba(255,136,62,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(22,155,98,1)), color-stop(50%, rgba(255,255,255,1)), color-stop(100%, rgba(255,136,62,1)));
+background: -webkit-linear-gradient(left, rgba(22,155,98,1) 0%, rgba(255,255,255,1) 50%, rgba(255,136,62,1) 100%);
+background: -o-linear-gradient(left, rgba(22,155,98,1) 0%, rgba(255,255,255,1) 50%, rgba(255,136,62,1) 100%);
+background: -ms-linear-gradient(left, rgba(22,155,98,1) 0%, rgba(255,255,255,1) 50%, rgba(255,136,62,1) 100%);
+background: linear-gradient(to right, rgba(22,155,98,1) 0%, rgba(255,255,255,1) 50%, rgba(255,136,62,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#169b62', endColorstr='#ff883e', GradientType=1 );
+
+}

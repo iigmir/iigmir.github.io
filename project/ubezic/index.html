@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ubezic Museum</title>
+    <!-- JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/ascript.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../../back2home.css" />
+    <!-- Last update: 2017/01/27 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    <h1>Ubezic Museum</h1>
+    <div id="nvlst-btn"> <i class="fa fa-bars  fa-5x" aria-hidden="true"></i> </div>
+    <div id="back2home"><a href="../../home.php" title="Back to homepage/回首頁"> <i class="fa fa-home fa-3x" aria-hidden="true" style="color:blue;"></i> </a></div>
+    
+    <div class="flexslider">
+        <ul class="slides">
+            <li> <img src="img/Boucher_Diane_sortant_du_bain_Louvre_2712.jpg" /> </li>
+            <li> <img src="img/Coronation_portrait_of_Queen_Victoria_-_Hayter_1838.jpg" /> </li>
+            <li> <img src="img/Journey_to_the_East_BM_1881.1210.0.332_n03.jpg" /> </li>
+        </ul>
+    </div>
+    <main>
+        <!--  nav and article ratio: 1:2 -->
+        <nav>
+            <ul>
+                <li><a href="#visit">Visit info</a></li>
+                <li><a href="#colle">Collection</a></li>
+                <li><a href="#exhib">Exhibition</a></li>
+                <li><a href="#educa">Education </a></li>
+            </ul>
+        </nav>
+        <article>
+            <section id="visit">
+                <h2>Visit info</h2>
+                <p>At first time, navigation bar is vertical. However, when considering mobile, I found that vertical is really hard to identify and develop -- well this design is hard to develop anyway -- So, I change navigation bar's direction from vertical to horizontal.</p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                    <li>Aliquam tincidunt mauris eu risus.</li>
+                    <li>Vestibulum auctor dapibus neque.</li>
+                </ul>
+            </section>
+            <section id="colle">
+                <h2>Collection</h2>
+                <p>The "text on image background" design is really hard. Let's talk about something:</p>
+                <ul>
+                    <li>Colour issue: These beautiful painting are from public domain. But when consider compoments' colour set, here comes problem: If compoments' colour set too light, compoments will confused with background, but if too dark, compoments will break whole background.</li>
+                    <li>Centre issue: If check page structure, you will found that articles are under background: yes, these background are actually divs. The whole articles actually need to use left and right properties so that block articles can "put" into background divs. However, left and right are difficult to put into centre. After hours and hours, I finally abandon put these articles into centre.</li>
+                    <li>Beautiful, but even not suitable on mobile.</li>
+                </ul>
+                </section>
+            <section id="exhib">
+                <h2>Exhibition</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                    <li>Aliquam tincidunt mauris eu risus.</li>
+                    <li>Vestibulum auctor dapibus neque.</li>
+                </ul>
+            </section>
+            <section id="educa">
+                <h2>Education </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                    <li>Aliquam tincidunt mauris eu risus.</li>
+                    <li>Vestibulum auctor dapibus neque.</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+</body>
+</html>

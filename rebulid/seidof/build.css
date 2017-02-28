@@ -1,0 +1,114 @@
+body
+{
+    width:960px;
+    margin:0 auto;
+}
+
+a {text-decoration:none;}
+
+header
+{
+    width:100%;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+header ul
+{
+    float:right;
+    list-style: none;
+    display:inline;
+}
+header ul li{ display:inline-block; }
+header a{ margin:5px; }
+header a:hover { color:#04BB0B; }
+
+
+nav
+{
+    background-color:#1887C7;
+    border-radius:5px;
+    color:#FFFFFF;
+    
+    padding:5px;
+}
+nav ul
+{
+    padding:10px 20px 10px 20px;
+    list-style: none;
+    border-radius:5px;
+}
+nav ul ul li
+{
+    display: none;
+    background-color:#5AB6DE;
+    padding:5px;
+}
+
+/* Footer and classes which use under footer */
+footer
+{
+    width:100%;
+    
+    margin-bottom:10px;
+    padding:5px;
+    overflow:auto;
+    
+    background-color:#DAF5FE;
+    border-radius: 5px;
+}
+footer ul
+{
+    list-style: none;
+    padding-bottom:5px;
+}
+.footer-logo{ float:left; }
+.footer-link img
+{
+    width:120px; height:40px;
+    margin-top:5px;
+} 
+
+/* Form: Menber Login */
+.menber-login
+{
+    margin-top:10px;margin-bottom:10px;
+    padding:10px;
+    
+    background-color:#88D4A6;
+    border-radius:5px;
+    /* 斜線背景,Ref: http://codepen.io/chriscoyier/pen/epfEc/ */
+    background: repeating-linear-gradient(
+        -45deg,
+        #88D4A6     , #88D4A6 10px,
+        #79D09D 10px, #79D09D 20px
+    );
+}
+.menber-login * { margin-top:5px; }
+.menber-login a { color:#FFF000; }
+.menber-login input[type=text]
+{
+    width: 75%;
+}
+.menber-login input[type=submit]
+{
+    padding:0px 10px 2px 10px;
+    border-radius:5px;
+    background-color:#EE9A40;
+    color:#FFFFFF;
+}
+
+/* 960 Grid System */
+.left
+{
+    width:24%;
+    float:left;
+    margin:10px 5px 10px 0px;
+}
+.right
+{
+    width:74%;
+    float:right;
+    margin:10px 0px 10px 5px;
+}
+
+.login_g li{ display:inline-block; }

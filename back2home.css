@@ -1,0 +1,15 @@
+#back2home
+{
+    width:100px;
+    height:100px;
+    position:fixed;
+    bottom:10px;
+    left:10px;
+    background-color:white;
+    z-index: 100;
+    border-radius:50%;
+}
+
+#back2home a{display:block;}
+
+#back2home a i{margin:25%;}
