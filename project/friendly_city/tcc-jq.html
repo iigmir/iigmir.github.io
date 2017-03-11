@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>臺中市與各國際姊妹市暨友好城市地圖</title>
+    <link rel="stylesheet" href="citymap.css"/>
+</head>
+<body>
+    <h1>台中市姊妹市與友好城市地圖</h1>
+    <div id="citymap" class="container" style="margin:0 auto !important;"></div>
+    <article class="container">
+        <h2>筆記：談談接 API、接 JSON、抓地圖、玩 OSM 的那些事。</h2>
+        <p>我想練習如何再度整合 API、JSON、地圖之類的東西。於是這個專案就出現了。</p>
+        <section>
+            <h3>關於地圖</h3>
+            <p>我先前曾經寫過<a href="https://iigmir.github.io/works/project/bakery/">歐拉麵包店</a>的專案，在這個專案我使用了 Google Maps 的 API 以便讓我自訂的點，能直接標示在地圖上面。API 是「程式應用介面」的縮寫，詳細舉例我想以後再來談，你只要知道：只要把 Google Maps API 的語法寫對、到 Google Maps 的網路也沒有出問題，你就一定可以拿到 Google Maps 的地圖資料。所以如果要和其他程式連結在一起，就會很依賴 API 來接收該程式的資料。</p>
+            <p>雖然我們如此依賴 API，Google 卻對 API 的管制很嚴格：你需要使用 Google 帳號<a href="https://developers.google.com/maps/documentation/javascript/?hl=zh-tw">申請</a>使用 API 使用權、在 console 開通使用權、才能使用該 API。有時候，<a href="https://developers.google.com/maps/pricing-and-plans/?hl=zh-tw">你可能還要有付費的準備</a>。</p>
+            <blockquote>「我只要用個小圖小網站而已，有必要這樣綁手綁腳嗎？」</blockquote>
+            <p>後來參與到<a href="https://github.com/iigmir/tcbus">台中公車地圖專案</a>後，發現該專案用的是 <a href="https://www.openstreetmap.org/">OpenStreetMap</a>，好像...是類似維基百科那樣，大家自己寫地圖的資訊？那是不是 API 會不會比較自由一點？所以我去查了手冊，的確不用像 Google 這麼嚴。只要把他們提供的<a href="http://wiki.openstreetmap.org/wiki/OpenLayers_Marker_Example">範例</a>複製貼上，網頁就有一份地圖了。需要點點嗎？那新增個 Marker 物件就好。</p>
+            <p>好，那就用 OpenStreetMap 開始吧。<br/>另外，接下來 OpenStreetMap 會用簡寫 OSM 稱之。</p>
+        </section>
+        <section>
+            <h3>關於資料</h3>
+            <p>既然的圖已經決定好用 OSM 了，那麼資料用什麼？看到大家很多人是在用政府的開放資料來建立各種專案，那就試試看吧。現在的政府釋出了這麼多開放資料，害我甚至以為是當年柯文哲代表的台北市政府所開的先河，但其實<a href="http://data.taipei">台北市開放資料</a>，是在有點歷史的 2011 年開通。我住的<a href="http://data.taichung.gov.tw">台中市開放資料</a>晚一點，2013 年開通。</p>
+            <p>然後，我想到許多都市都有相對應的姊妹市或友好市，台中自然也不例外，可那些都市在什麼地方？能不能用地圖搞出來？所以資料也決定好了，就是台中市的姊妹市地圖。</p>
+            <p>本來，我希望直接用 <a href="codepen.io">codepen</a> 直接寫出來的。但無奈的是，這些資料是 HTTP 協議。<a href="https://developer.mozilla.org/zh-TW/docs/Security/MixedContent">瀏覽器在使用更安全的 HTTPS 時，對 HTTP 並不友善</a>：就算只是圖片文字，瀏覽器也會警告。.css 與 .js 之類的腳本檔案更不用說，直接封鎖。所以，使用 HTTPS 的 codepen 會無法接上 HTTP 的 .json 資料。你只能自行下載那些資料。</p>
+            <p>下載好以後，你會發現 <a href="cities.json">.json</a> 檔裡面只有 Unicode 字符碼。人根本看不懂。必須要放到瀏覽器上顯示才行。所幸，瀏覽器的 <code>console.table()</code> 能夠正確解讀這些符號。請按下下面的按鈕，然後打開開發工具檢查一下吧。</p>
+            <button id="get_table_data">從主控台獲取表格資料</button>
+        </section>
+        <section>
+            <h3>關於整合過程</h3>
+            <p>因為過往的經驗是：如果有很多資料，你需要用到大括弧，以模擬 JSON 形式。所以我也把這個觀念帶到了 OSM 開發中。結果卻是不斷出錯，無法顯示。原來不需要用 JSON 形式就能完成。雖說如此，修改了以後卻還是有問題。到後來，卻發現只是名字寫錯而已。感覺頗（大悲）無言的XD</p>
+            <p>還有，在中文語境下，我常常都把經緯度弄錯了，到了英文的時候...想來就很搞笑。</p>
+            <p>對了，JSON 是個資料傳遞形式，通常長成這副樣子： <code>[{name:"foobar",bust:48,female:false},{name:"Chihaya Kisaragi",bust:72,female:true}]</code> 我們會用該 JavaScript 框架規定的 AJAX 方法獲取這個 JSON 檔案（在純 JavaScript 則會使用 XMLHttpRequest 物件完成）後，接著把冒號前面，稱為屬性的東西呼叫出來：像是 <code>event.name</code> 就會呼叫該 JSON 裡面的 name 屬性。</p>
+        </section>
+        <section>
+            <h3>關於一些後記</h3>
+            <ul>
+                <li>我接下來會想做個功能，就是在這些點點裡面，增加該文字的訊息。當然就是直接動用 JSON 裡面的資料。</li>
+                <li>OSM 其實很好玩。記得以前有過大家一起來寫尼泊爾地圖資料的新聞。然後就有什麼精英vs箱民的論戰。也許我是從高中就受自由軟體文化感動、也或許是我大學學到了理想化的想法，我一直認為自由軟體與開源文化是應該降低門檻的。</li>
+                <li>我突然想到小時候讀過聖經的喜宴比喻（限於篇幅，請自己找<a href="http://www.recoveryversion.com.tw/Style0A/026/read_List.php?f_BookNo=40&f_ChapterNo=22">馬太福音的第22章</a>來看）。現在想想，自由軟體與開源文化的興起，有種喜宴比喻的感覺。</li>
+                <li>繁體中文很多開源資料並不完整：像是 MDN 的文章翻譯，繁體中文遠遠輸了簡體中文。我原本因此覺得，中國的開源文化肯定比台灣興盛很多。但出我意料之外，某位來自中國的開源推廣者<a href="https://tonghuix.io/2014/08/diff-china-tw-os/">很羨慕台灣的開源社群</a>。看了一下，似乎言之成理。</li>
+                <li>開源的相容性，源於開發者尊重共同介面的規範與否。你可以從瀏覽器的發展歷史，發現到開源閉源的一些事情。</li>
+            </ul>
+        </section>
+    </article>
+    <!-- JS part -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://www.openlayers.org/api/OpenLayers.js"></script>
+    <script src="citymap.js"></script>
+</body>
+</html>
