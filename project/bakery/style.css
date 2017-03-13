@@ -111,7 +111,7 @@ footer{position:relative;}
 {
     content: "";
     position: absolute;
-    width: 94%;
+    width:94%;
     height: 0;
 }
 .kado:before
@@ -163,9 +163,9 @@ footer .kado:after { border-top-color:rgba(0,0,255,0.8); }
 @media screen and (min-width: 840px) and (max-width: 960px)
 {   /* article styling for some special width */
     #stn{padding:10px 80px 10px 80px;}
-    article{margin:0 auto 30px auto;max-width:100%;}
-    article::before, article::after {width: 97.4%;}
+    article{margin:0 auto 30px auto;max-width:100%; }
     article p{margin-left:100px;}
+    article + .kado::before, article + .kado::after { width: 97.5%; }
 }
 
 @media screen and (max-width:840px)
@@ -174,15 +174,14 @@ footer .kado:after { border-top-color:rgba(0,0,255,0.8); }
     #whoarewe,#ourstory { max-width:100%; }
     nav {width: 100%;}
     article {float: none;margin:0 auto 30px auto;max-width:640px;}
-    article::before, article::after {width: 97.1%;}
     article p{margin-left:100px;}
+    article + .kado::before, article + .kado::after { width: 97%; }
 }
 
 @media screen and (max-width: 480px)
 {   /* for moblie */
     header > div{height: 100%;}
     article{margin-bottom:30px;}
-    article::before, article::after {width: 96%;}
     
     section,footer
     {
