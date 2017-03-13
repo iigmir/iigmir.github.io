@@ -38,3 +38,9 @@ p:hover,li:hover,blockquote:hover
     height:360px;
     border:none;
 }
+#get_table_data
+{
+    display:block;
+    margin:0 auto;
+    text-align:center;
+}
